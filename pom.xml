@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.wnj</groupId>
+	<artifactId>wnj-spring-cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>wnj-web</module>
+		<module>wnj-util</module>
+		<module>wnj-client</module>
+		<module>wnj-service-impl</module>
+		<module>wnj-biz-share</module>
+		<module>wnj-domain</module>
+		<module>wnj-common</module>
+		<module>wnj-backend</module>
+		<module>wnj-repo</module>
+		<module>wnj-test</module>
+	</modules>
+	<packaging>pom</packaging>
+
+	<name>wnj-spring-boot</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.6</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+		<guava.version>31.1-jre</guava.version>
+		<hutool.version>5.8.20</hutool.version>
+		<poi-ooxml.version>5.2.2</poi-ooxml.version>
+		<druid-spring-boot.version>1.2.8</druid-spring-boot.version>
+		<mybatis-spring.version>2.2.2</mybatis-spring.version>
+		<mybatis-plus-spring.version>3.5.3.1</mybatis-plus-spring.version>
+		<rocketmq.version>2.2.1</rocketmq.version>
+		<xxl-job.version>2.3.1</xxl-job.version>
+		<tinyid.version>1.0-RELEASE-dt</tinyid.version>
+		<fastjson.version>1.2.83</fastjson.version>
+		<apache-common.version>3.12.0</apache-common.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!--spring-cloud-->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!--工具-->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>${hutool.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${poi-ooxml.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache-common.version}</version>
+			</dependency>
+
+			<!-- 分布式中间件 -->
+			<dependency>
+				<groupId>com.xuxueli</groupId>
+				<artifactId>xxl-job-core</artifactId>
+				<version>${xxl-job.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.rocketmq</groupId>
+				<artifactId>rocketmq-spring-boot-starter</artifactId>
+				<version>${rocketmq.version}</version>
+			</dependency>
+
+			<!-- 数据库 -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid-spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.xiaoju.uemc.tinyid</groupId>
+				<artifactId>tinyid-client</artifactId>
+				<version>${tinyid.version}</version>
+			</dependency>
+
+			<!--自有-->
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-backend</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-util</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-repo</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-biz-share</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-service-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.wnj</groupId>
+				<artifactId>wnj-test</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<dependencies>
+		<!--spring-boot-热部署工具-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-devtools</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-freemarker</artifactId>-->
+<!--		</dependency>-->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.2.6.RELEASE</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!-- 源码 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+</project>
