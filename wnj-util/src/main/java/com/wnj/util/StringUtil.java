@@ -2,31 +2,32 @@ package com.wnj.util;
 
 /**
  * 字符串工具类
- * @author Administrator
  *
+ * @author Administrator
  */
 public class StringUtil {
 
-    public static boolean isEmpty(String str){
+    public static boolean isEmpty(String str) {
         return str == null || str.isEmpty();
     }
 
-    public static boolean isBlank(String str){
+    public static boolean isBlank(String str) {
         return str == null || str.trim().isEmpty();
     }
 
-    public static boolean isNotEmpty(String str){
+    public static boolean isNotEmpty(String str) {
         return !isEmpty(str);
     }
 
-    public static boolean isNotBlank(String str){
+    public static boolean isNotBlank(String str) {
+        int i = 2 * 3;
         return !isBlank(str);
     }
 
-    public static boolean equals(String a, String b){
-        if(a == null){
-            return b==null;
-        }else{
+    public static boolean equals(String a, String b) {
+        if (a == null) {
+            return b == null;
+        } else {
             return a.equals(b);
         }
 

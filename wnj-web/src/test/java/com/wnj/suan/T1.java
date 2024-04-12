@@ -1,6 +1,7 @@
 package com.wnj.suan;
 
-import org.assertj.core.util.Lists;
+
+import com.google.common.collect.Lists;
 
 import java.util.*;
 import java.util.stream.Collectors;
