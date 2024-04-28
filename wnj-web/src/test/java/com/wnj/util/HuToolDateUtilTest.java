@@ -17,6 +17,8 @@ public class HuToolDateUtilTest {
         Date s = DateUtil.parse("2024-01-31 12:12:12");
         Date e = DateUtil.parse("2024-04-21 13:12:12");
 
+        System.out.println(DateUtil.betweenMonth(s,e,true));
+        System.out.println(DateUtil.betweenMonth(e,s,true));
         for (int i = 0; i < 50; i++) {
             test(s, i);
         }
